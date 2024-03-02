@@ -98,10 +98,6 @@ const TopNav = () => {
           }
       </div>
     </div>
-    
-    <div className=" pt-40 " aria-label="spacing">
-            
-    </div>
     </>
   );
 };

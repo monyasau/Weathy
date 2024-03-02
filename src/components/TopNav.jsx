@@ -1,117 +1,109 @@
 import { useState } from "react";
+import weathyIcon from "../assets/weathy.svg"
 
-const TopNav=()=> {
-
+const TopNav = () => {
   const [menu, setMenu] = useState(false);
-
   return (
     <>
-            <nav className=" py-6 border-b">
-      <div className="flex max-w-screen-xl w-full mx-auto justify-between py-2 md:px-0 px-4">
-        <div>
-          <a href="/" className="text-xl font-bold">
-            ThisIsAbefe
+    <div className="w-full text-[#d5d3d3] py-8 backdrop-blur-[40px] fixed">
+      <div className="max-w-screen-xl flex px-4 md:px-0  py-6 items-center justify-between mx-auto w-full h-4">
+        <div className="text-2xl flex  ">
+          <a href="/Home" className="">
+            Weathy
           </a>
+<img src={weathyIcon} alt="" />
         </div>
 
-        <div className="gap-14 hidden sm:flex">
-          <a href="#" className="font-medium hover:underline">
+          {menu?
+          <>
+        <div className="w-[320px] max-w-[90%] shadow-lg sm:static absolute top-5 right-2 sm:w-auto z-50 bg-white rounded-lg  p-6 ">
+          <div className="sm:gap-14 gap-y-5 sm:mt-0 sm:flex-row md:space-y-0  flex flex-col ">
+
+        <svg
+              viewBox="0 0 10 10"
+              className="w-[13px] h-[13px] sm:hidden  right-4 absolute text-[#858788] "
+              aria-label="close button"
+              onClick={() => setMenu(false)}
+              >
+              <path
+                d="M0 0L10 10M10 0L0 10"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                ></path>
+            </svg>
+          <a href="/" className=" hover:underline ">
             Home
           </a>
-          <a href="#" className="text-dark-gray hover:underline">
-            Designs
+          <a href="./Projects.jsx" className="hover:underline ">
+            Projects
           </a>
-          <a href="#" className="text-dark-gray hover:underline">
-            Music
+          <a href="./About.jsx" className=" hover:underline ">
+            About
           </a>
-          <a href="#" className="text-dark-gray hover:underline">
+          <a href="/Contact.jsx" className=" hover:underline ">
             Contact
           </a>
-        </div>
-
-        <div
-          id="dropdownMenuToggleIcon"
-          className="dropdown align-right sm:hidden items-center flex"
-          onClick={() => setMenu(true)}
-        >
-          <a href="#" className="text-slate-600 font-bold mx-4">
-            Menu
-          </a>
-
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth={1.5}
-            stroke="currentColor"
-            className="w-6 h-6"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
-            />
-          </svg>
-        </div>
-
-        {menu && (
-          <>
-          <div
+          
+                </div>
+                </div>
+                <div
           id="backdrop"
-          className=" fixed inset-0 z-40 bg-black/20 backdrop-blur-sm dark:bg-slate-900/80"
+          className=" fixed h-[100vh] inset-0 z-40 bg-black/20 backdrop-blur-[.7px] dark:bg-slate-900/80"
           onClick={()=>setMenu(false)}
         ></div>
-          <div
-            id="smallScreenNavBar"
-            className="fixed z-50 top-4 right-4 w-full max-w-xs bg-white rounded-lg shadow-lg p-6 text-base font-semibold text-slate-900 dark:bg-slate-800 dark:text-slate-400 dark:highlight-white/5"
-          >
-            <div
-              id="closeSmNav"
-              onClick={() => setMenu(false)}
-              className="absolute top-5 right-5 w-8 h-8 flex justify-center text-slate-500 hover:text-slate-600 dark:text-slate-400 dark:hover:text-slate-300"
+            </>
+        :
+        <>
+        <div className="flex gap-4 p-1  sm:hidden   text-[#858788]" onClick={() => setMenu(true)}>
+          
+                <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="full"
+              viewBox="0 0 24 24"
+              strokeWidth="0.5"
+
+              
+              stroke="#858788"
+              className=" w-6 h-6 "
             >
-              <svg viewBox="0 0 10 10" className="w-2.5 h-2.5 overflow-visible">
-                <path
-                  d="M0 0L10 10M10 0L0 10"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                ></path>
-              </svg>
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M.5 4c0-.83.67-1.5 1.5-1.5h20a1.5 1.5 0 0 1 0 3H2A1.5 1.5 0 0 1 .5 4m0 8c0-.83.67-1.5 1.5-1.5h20a1.5 1.5 0 0 1 0 3H2A1.5 1.5 0 0 1 .5 12m0 8c0-.83.67-1.5 1.5-1.5h20a1.5 1.5 0 0 1 0 3H2A1.5 1.5 0 0 1 .5 20"
+              />
+            </svg>
+        </div>
+
+            <div className="hidden sm:block">
+              <div className=" sm:flex gap-14">
+              <a href="/" className=" hover:underline ">
+            Home
+          </a>
+          <a href="./Projects.jsx" className=" hover:underline ">
+            Projects
+          </a>
+          <a href="./About.jsx" className=" hover:underline ">
+            About
+          </a>
+          <a href="/Contact.jsx" className=" hover:underline ">
+            Contact
+          </a>
+              </div>
             </div>
-
-            <ul className="space-y-6">
-              <li>
-                <a className="hover:text-sky-500" href="/">
-                  Home
-                </a>
-              </li>
-
-              <li>
-                <a href="/designs" className="hover:text-sky-500">
-                  Designs
-                </a>
-              </li>
-
-              <li>
-                <a className="hover:text-sky-500" href="/music">
-                  Music
-                </a>
-              </li>
-
-              <li>
-                <a className="hover:text-red-500" href="/Contact">
-                  Contact
-                </a>
-              </li>
-            </ul>
-          </div>
-          </>
-        )}
+        
+        </>
+        
+          }
       </div>
-      </nav>
+    </div>
+    
+    <div className=" pt-40 " aria-label="spacing">
+            
+    </div>
     </>
   );
-}
+};
+
 export default TopNav;

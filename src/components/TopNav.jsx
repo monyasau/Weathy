@@ -5,9 +5,9 @@ const TopNav = () => {
   const [menu, setMenu] = useState(false);
   return (
     <>
-    <div className="w-full text-[#d5d3d3] py-8 backdrop-blur-[40px] fixed">
+    <div className="w-full text-[#ffffff] bg-[#00000022] py-8 backdrop-blur-[40px] ">
       <div className="max-w-screen-xl flex px-4 md:px-0  py-6 items-center justify-between mx-auto w-full h-4">
-        <div className="text-2xl flex  ">
+        <div className="text-2xl font-bold flex  ">
           <a href="/Home" className="">
             Weathy
           </a>
@@ -17,7 +17,7 @@ const TopNav = () => {
           {menu?
           <>
         <div className="w-[320px] max-w-[90%] shadow-lg sm:static absolute top-5 right-2 sm:w-auto z-50 bg-white rounded-lg  p-6 ">
-          <div className="sm:gap-14 gap-y-5 sm:mt-0 sm:flex-row md:space-y-0  flex flex-col ">
+          <div className="sm:gap-14 gap-y-5 sm:mt-0 sm:flex-row md:space-y-0 text-xl  flex flex-col ">
 
         <svg
               viewBox="0 0 10 10"

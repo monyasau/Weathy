@@ -1,7 +1,7 @@
 import { useState } from 'react'
 
 
-let Main=()=> {
+let Weathy=()=> {
     return (
         <div className='w-full mt-8 h-[80%]'>
 
@@ -14,4 +14,4 @@ let Main=()=> {
     );
 }
 
-export default Main;
+export default Weathy;

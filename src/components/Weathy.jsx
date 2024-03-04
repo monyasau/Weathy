@@ -1,12 +1,14 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import Backend from './Backend';
 
 let Weathy=()=> {
     const [searchClick, setSearchClick]=useState(false);
+    const [userInput, setUserInput]=useState("false");
     return (
         <div className='w-full mt-8 h-[80%]'>
 
         <div className="max-w-screen-xl text-[#eee] mx-auto  items-center  h-full flex">
-<div className=' p-4 mx-auto w-[500px] shadow-lg rounded-3xl bg-[#000000d0] h-[450px]'>
+<div className=' p-4 mx-auto w-[500px] shadow-lg rounded-3xl bg-[#000000d0] max-h-[450px]'>
 <div aria-label='search container' className='flex justify-between bg-[#96969633] p-4 rounded-2xl'>
 <input type="text" className='focus:outline-none text-[#eee] text-2xl py-4 w-[90%] bg-transparent rounded-xl'/>
 <button onClick={()=>searchClick?setSearchClick(false):setSearchClick(true)}>
@@ -32,6 +34,15 @@ let Weathy=()=> {
 Weather in {}
     </h1>
 </div>
+{useEffect(() => {
+
+
+  return () => {
+    
+<Backend location={userInput}/>
+  }
+}, [userInput])}
+
 
 </div>
         </div>

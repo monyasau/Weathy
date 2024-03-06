@@ -37,7 +37,6 @@ let Weathy=()=> {
     </h1>
       <div className='bg-slate-200 h-10 rounded-xl w-2/5 animate-pulse' aria-label='temp'></div>
       <div className='bg-slate-200 h-5 rounded-md my-3 w-3/5 animate-pulse' aria-label='location'></div>
-</div>
 {useEffect(() => {
 
 
@@ -48,6 +47,12 @@ let Weathy=()=> {
 }, [userInput])}
 
 
+</div>
+<div aria-label='weather info footer' className=' grid grid-cols-2 border-t w-full'>
+  <div className='h-10 text-center p-12 border-r bg-gray-500 animate-pulse rounded-md'>
+    <div className='h-6 bg-slate-200 animate-pulse rounded-lg'></div>
+  </div>
+</div>
 </div>
         </div>
         </div>

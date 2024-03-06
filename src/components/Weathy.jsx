@@ -49,11 +49,11 @@ let Weathy=()=> {
 
 </div>
 <div aria-label='weather info footer' className=' grid grid-cols-2 gap-3 w-full animate-pulse'>
-  <div className='h-10 text-center p-12 border-r bg-slate-300  rounded-md'>
-    <div className='h-8 bg-slate-200 animate-pulse rounded-lg'></div>
+  <div className='h-10 text-center p-12 border-r bg-slate-200  rounded-md'>
+    <div className='h-8 animate-pulse rounded-lg'></div>
   </div>
-  <div className='h-10 text-center p-12 border-l bg-slate-300 rounded-md'>
-    <div className='h-8 bg-slate-200 animate-pulse rounded-lg'></div>
+  <div className='h-10 text-center p-12 border-l bg-slate-200 rounded-md'>
+    <div className='h-8 animate-pulse rounded-lg'></div>
   </div>
 </div>
 </div>

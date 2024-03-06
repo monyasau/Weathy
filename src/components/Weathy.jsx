@@ -30,7 +30,7 @@ let Weathy=()=> {
 
 </button>
 </div>
-<div aria-label='Weather info' className='my-4'>
+<div aria-label='Weather info main' className='my-4'>
     <h1 className='text-3xl font-semibold flex items-center'>
       <div className='bg-slate-200 h-12 rounded-xl w-4/5 mr-4 animate-pulse'></div>
       <div className='bg-slate-200 h-20 w-20 rounded-full animate-pulse' aria-label='Weather info'></div>
@@ -48,9 +48,12 @@ let Weathy=()=> {
 
 
 </div>
-<div aria-label='weather info footer' className=' grid grid-cols-2 border-t w-full'>
-  <div className='h-10 text-center p-12 border-r bg-gray-500 animate-pulse rounded-md'>
-    <div className='h-6 bg-slate-200 animate-pulse rounded-lg'></div>
+<div aria-label='weather info footer' className=' grid grid-cols-2 gap-3 w-full animate-pulse'>
+  <div className='h-10 text-center p-12 border-r bg-slate-300  rounded-md'>
+    <div className='h-8 bg-slate-200 animate-pulse rounded-lg'></div>
+  </div>
+  <div className='h-10 text-center p-12 border-l bg-slate-300 rounded-md'>
+    <div className='h-8 bg-slate-200 animate-pulse rounded-lg'></div>
   </div>
 </div>
 </div>

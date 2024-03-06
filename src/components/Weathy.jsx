@@ -31,9 +31,11 @@ let Weathy=()=> {
 </button>
 </div>
 <div aria-label='Weather info' className=''>
-    <h1 className='text-3xl font-semibold my-8'>
-Weather in  <span className='skel'></span>
+    <h1 className='text-3xl font-semibold my-8 flex items-center'>
+      <div className='bg-slate-200 h-12 rounded-xl w-4/5 mr-4 animate-pulse'></div>
+      <div className='bg-slate-200 h-20 w-20 rounded-full animate-pulse'></div>
     </h1>
+      <div className='bg-slate-200 h-10 rounded-xl w-2/5 animate-pulse'></div>
 </div>
 {useEffect(() => {
 

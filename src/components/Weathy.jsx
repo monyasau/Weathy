@@ -3,14 +3,15 @@ import Backend from './Backend';
 
 let Weathy=()=> {
     const [searchClick, setSearchClick]=useState(false);
+    const [loading, setLoading]=useState(false);
     const [userInput, setUserInput]=useState("false");
     return (
         <div className='w-full mt-8 h-[80%]'>
 
-        <div className="max-w-screen-xl text-[#eee] mx-auto  items-center  h-full flex">
-<div className=' p-4 mx-auto w-[500px] shadow-lg rounded-3xl bg-[#000000d0] max-h-[450px]'>
+        <div className="max-w-screen-xl text-[whitesmoke] mx-auto  items-center  h-full flex">
+<div className=' px-10 p-16 mx-auto max-w-[500px] shadow-lg rounded-[30px] bg-[#000000d0] h-[470px] w-[100%] '>
 <div aria-label='search container' className='flex justify-between bg-[#96969633] p-4 rounded-2xl'>
-<input type="text" className='focus:outline-none text-[#eee] text-2xl py-4 w-[90%] bg-transparent rounded-xl'/>
+<input type="text" placeholder='Enter a city name' className='focus:outline-none text-[#eee] text-2xl py-4 w-[90%] bg-transparent rounded-xl'/>
 <button onClick={()=>searchClick?setSearchClick(false):setSearchClick(true)}>
     {
         searchClick?(
@@ -29,8 +30,8 @@ let Weathy=()=> {
 
 </button>
 </div>
-<div aria-label='Weather info' className='my-8'>
-    <h1 className='text-3xl font-semibold'>
+<div aria-label='Weather info' className=''>
+    <h1 className='text-3xl font-semibold my-8'>
 Weather in  <span className='skel'></span>
     </h1>
 </div>

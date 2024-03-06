@@ -31,7 +31,7 @@ let Weathy=()=> {
 </div>
 <div aria-label='Weather info' className='my-8'>
     <h1 className='text-3xl font-semibold'>
-Weather in {}
+Weather in  <span className='skel'></span>
     </h1>
 </div>
 {useEffect(() => {

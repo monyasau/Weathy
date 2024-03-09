@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import Backend from './Backend';
+import weatherConditionImage from "../assets/overcastClouds.svg";
 
 let Weathy=()=> {
   const [searchClick, setSearchClick]=useState(false);
@@ -36,10 +37,10 @@ let Weathy=()=> {
 
 <div aria-label='Weather info main' className='my-4 '>
     <h1 className='text-3xl font-semibold flex items-center'>
-      <div className=' h-12 w-[70%] mr-4'>Weather in Katsina</div>
-      <div className='bg-slate-200 h-[90px] w-[90px] rounded-full animate-pulse' aria-label='Weather info'></div>
+      <div className=' h-12 w-[70%] mr-4'>Scattered Clouds</div>
+      <div className='h-[90px] w-[90px] rounded-full' aria-label='Weather info'><img src={weatherConditionImage} className='w-full h-full' alt="" /></div>
     </h1>
-      <div className='bg-slate-200 h-10 rounded-xl w-2/5 animate-pulse' aria-label='temp'></div>
+      <div className=' h-10 rounded-xl w-2/5 text-3xl' aria-label='temp'>37.89°C </div>
       <div className='bg-slate-200 h-5 rounded-md my-3 w-3/5 animate-pulse' aria-label='location'></div>
 {useEffect(() => {
 

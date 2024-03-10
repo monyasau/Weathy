@@ -47,25 +47,21 @@ let Weathy=()=> {
   <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
 </svg> Katsina, NG
 </div>
-{useEffect(() => {
+{/* {useEffect(() => {
 
 
   return () => {
     
 <Backend location={userInput}/>
   }
-}, [userInput])}
+}, [userInput])} */}
 
 
 </div>
 <div aria-label='weather info footer' className=' flex text-2xl items-cent justify-ce font-semibold w-full '>
-  {/* <div className='h-10 text-center p-12  rounded-md'> */}
     <div className='w-[50%]'>Feels like 36°C</div>
-  {/* </div> */}
-  {/* <div className='h- text-center p-12  rounded-md'> */}
   <div className='w-[50%] text-right'>Feels like 36°C</div>
   </div>
-{/* </div> */}
 </div>
 )
 :(

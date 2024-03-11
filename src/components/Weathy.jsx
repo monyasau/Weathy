@@ -51,7 +51,14 @@ let Weathy=()=> {
   const [searchClick, setSearchClick]=useState(false);
   const [loading, setLoading]=useState(false);
   const [userInput, setUserInput]=useState("");
-  const checkInput = (event)=>{(event.keyCode===13)?(fetchWeather(userInput)):(setUserInput(event.target.value));}
+  const checkInput = (event) => {
+    if (event.keyCode===13) {
+      // fetchWeather(userInput)
+        fetch(`https://api.openweathermap.org/data/2.5/weather?q=${userInput}&appid=${apiKey}`).then(response=>response.json()).then(data=>console.log(data)).catch(error=>console.error('Error:', error))
+    } else {
+      setUserInput(event.target.value)
+    }
+  };
   const fetchWeather = (location)=>{console.log(userInput);}
     return (
         <div className='w-full mt-8 h-[80%]'>

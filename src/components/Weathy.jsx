@@ -98,7 +98,7 @@ let Weathy=()=> {
   const [userInput, setUserInput]=useState("");
   const checkInput = (event) => {
     if (event.keyCode===13) {
-      fetchFunction()
+      fetchWeather()
     } else {
       setUserInput(event.target.value)
     }

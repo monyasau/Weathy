@@ -1,7 +1,7 @@
 
 import weatherConditionImage from "../assets/overcastClouds.svg";
 
-let WeatherInfo=(loading, weatherData)=> {
+let WeatherInfo=({loading, weatherData})=> {
     return (
         <div>
 
@@ -10,10 +10,10 @@ let WeatherInfo=(loading, weatherData)=> {
     <div aria-label='weather info'>
     <div aria-label='Weather info main' className='my-4 '>
         <h1 className='text-3xl font-semibold flex items-center'>
-          <div className=' h-10 w-[70%] mr-4'>Scattered Clouds</div>
+          <div className=' h-10 w-[70%] mr-4'>{weatherData.weather[0].description}</div>
           <div className='h-[90px] w-[90px] rounded-full' aria-label='Weather info'><img src={weatherConditionImage} className='w-full h-full' alt="" /></div>
         </h1>
-          <div className=' rounded-xl w-2/5 text-3xl' aria-label='temp'>37.89°C </div>
+          <div className=' rounded-xl w-2/5 text-3xl' aria-label='temp'>{weatherData.main.temp} </div>
           <div className=' h-5 rounded-md my-3 w-3/5 inline-flex ' aria-label='location'>
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 mr-4">
       <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
@@ -59,10 +59,16 @@ let WeatherInfo=(loading, weatherData)=> {
     
     </div>
     <div aria-label='weather info footer' className=' grid grid-cols-2 gap-3 w-full animate-pulse'>
-      <div className='h-10 text-center p-12 border-r bg-slate-200  rounded-md'>
+      <div className='h-10 text-center p border-r bg-slate-200  rounded-md'>
         <div className='h-8 animate-pulse rounded-lg'></div>
       </div>
-      <div className='h-10 text-center p-12 border-l bg-slate-200 rounded-md'>
+      <div className='h-10 text-center border-l bg-slate-200 rounded-md'>
+        <div className='h-8 animate-pulse rounded-lg'></div>
+      </div>
+      <div className='h-10 text-center p border-r bg-slate-200  rounded-md'>
+        <div className='h-8 animate-pulse rounded-lg'></div>
+      </div>
+      <div className='h-10 text-center border-l bg-slate-200 rounded-md'>
         <div className='h-8 animate-pulse rounded-lg'></div>
       </div>
     </div>

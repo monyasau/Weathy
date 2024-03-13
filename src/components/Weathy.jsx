@@ -48,19 +48,68 @@ let Weathy=()=> {
     "cod": 200
 }
   const apiKey = "b74985d4dc308902bd425a0afcda30ec";
+  let fallBackApiResponse={
+    "coord": {
+        "lon": 87.3167,
+        "lat": 23.4833
+    },
+    "weather": [
+        {
+            "id": 800,
+            "main": "Clear",
+            "description": "clear sky",
+            "icon": "01n"
+        }
+    ],
+    "base": "stations",
+    "main": {
+        "temp": 22.98,
+        "feels_like": 22.09,
+        "temp_min": 22.98,
+        "temp_max": 22.98,
+        "pressure": 1011,
+        "humidity": 29,
+        "sea_level": 1011,
+        "grnd_level": 1003
+    },
+    "visibility": 10000,
+    "wind": {
+        "speed": 1.01,
+        "deg": 177,
+        "gust": 1.16
+    },
+    "clouds": {
+        "all": 4
+    },
+    "dt": 1710275556,
+    "sys": {
+        "country": "IN",
+        "sunrise": 1710289296,
+        "sunset": 1710332336
+    },
+    "timezone": 19800,
+    "id": 1272175,
+    "name": "Durgapur",
+    "cod": 200
+}
   const [searchClick, setSearchClick]=useState(false);
+  const [apiResponse, setApiResponse]=useState({});
   const [loading, setLoading]=useState(false);
   const [userInput, setUserInput]=useState("");
   const checkInput = (event) => {
     if (event.keyCode===13) {
-      // fetchWeather(userInput)
-      setLoading(true)
-        fetch(`https://api.openweathermap.org/data/2.5/weather?q=${userInput}&appid=${apiKey}`).then(response=>response.json()).then(data=>console.log(data)).catch(error=>console.error('Error:', error))
+      fetchFunction()
     } else {
       setUserInput(event.target.value)
     }
   };
-  const fetchWeather = (location)=>{console.log(userInput);}
+  const fetchWeather=(location)=>{
+    
+      // fetchWeather(userInput)
+      setLoading(true)
+        // fetch(`https://api.openweathermap.org/data/2.5/weather?q=${userInput}&appid=${apiKey}`).then(response=>response.json()).then(data=>console.log(data)).catch(error=>console.error('Error:', error))
+        fetch(`https://api.openweathermap.org/data/2.5/weather?q=${userInput}&appid=${apiKey}`).then(response=>response.json()).then(data=>console.log(data)).catch(()=>setApiResponse(fallBackApiResponse))
+  }
     return (
         <div className='w-full mt-8 h-[80%]'>
         <div className="max-w-screen-xl text-[whitesmoke] mx-auto  items-center md:px-0 px-[2%] h-full flex">

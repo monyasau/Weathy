@@ -109,7 +109,7 @@ let Weathy=()=> {
       // fetchWeather(userInput)
       setLoading(!loading)
         // fetch(`https://api.openweathermap.org/data/2.5/weather?q=${userInput}&appid=${apiKey}`).then(response=>response.json()).then(data=>console.log(data)).catch(error=>console.error('Error:', error))
-        fetch(`https://api.openweathermap.org/data/2.5/weather?q=${userInput}&appid=${apiKey}`).then(response=>response.json()).then(data=>console.log(data)).catch(()=>setApiResponse(fallBackApiResponse))
+        fetch(`https://api.openweathermap.org/data/2.5/weather?q=${userInput}&appid=${apiKey}`).then(response=>response.json()).then(data=>setApiResponse(data)).catch(()=>setApiResponse(fallBackApiResponse))
   }
     return (
         <div className='w-full mt-8 h-[80%]'>

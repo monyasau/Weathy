@@ -10,7 +10,7 @@ let WeatherInfo=({loading, weatherData})=> {
           <div className=' h-10 w-[70%] mr-4'>{weatherData.weather[0].description}</div>
           <div className='h-[90px] w-[90px] rounded-full' aria-label='Weather info'><img src={`https://openweathermap.org/img/wn/${weatherData.weather[0].icon}.png`} className='w-full h-full' alt="" /></div>
         </h1>
-          <div className=' rounded-xl w-2/5 text-3xl' aria-label='temp'>{weatherData.main.temp}°C </div>
+          <span className=' rounded-xl w-2/5 text-3xl' aria-label='temp'>{weatherData.main.temp} °C | {((weatherData.main.temp) * 9/5) + 32} °F</span>
           <div className=' h-5 rounded-md my-3 w-3/5 inline-flex ' aria-label='location'>
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 mr-4">
       <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />

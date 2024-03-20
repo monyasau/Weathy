@@ -109,11 +109,13 @@ let Weathy=()=> {
       // fetchWeather(userInput)
       setLoading(true)
         // fetch(`https://api.openweathermap.org/data/2.5/weather?q=${userInput}&appid=${apiKey}`).then(response=>response.json()).then(data=>console.log(data)).catch(error=>console.error('Error:', error))
-        fetch(`https://api.openweathermap.org/data/2.5/weather?q=${userInput}&appid=${apiKey}&units=metric`).then(response=>response.json()).then(data=>setLoading(true)&&setApiResponse(data) &&setLoading(false)).catch(()=>setApiResponse(fallBackApiResponse))&&setLoading(false)
-  }
+        fetch(`https://api.openweathermap.org/data/2.5/weather?q=${userInput}&appid=${apiKey}&units=metric`).then(response=>response.json()).then(data=>setApiResponse(data)).catch(()=>setApiResponse(fallBackApiResponse))
+setTimeout(() => {
+    setLoading(true)
+}, 2000);
+    }
     return (
         <div className='w-full mt-8 h-[80%]'>
-            
         <div className="max-w-screen-xl text-[whitesmoke] mx-auto  items-center md:px-0 px-[2%] h-full flex">
 <div className=' px-10 p-14 mx-auto max-w-[500px] shadow-lg rounded-[30px] bg-[#000000d0] h-[470px] w-[100%] '>
 <div aria-label='search container' className='flex justify-between bg-[#96969633] p-4 rounded-2xl'>

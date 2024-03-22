@@ -23,7 +23,7 @@ const WeatherInfo = ({ loading, weatherData }) => {
 }
   return (
     <div>
-      {loading? (
+      {!loading? (
         <div aria-label="weather info">
             {weatherData && weatherData.weather && weatherData.weather.length > 0 && 
 (

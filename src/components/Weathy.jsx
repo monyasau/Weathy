@@ -48,13 +48,13 @@ let Weathy=()=> {
     "cod": 200
 }
   const apiKey = "b74985d4dc308902bd425a0afcda30ec";
-  const [searchClick, setSearchClick]=useState(false);
   const [apiResponse, setApiResponse]=useState({});
-  const [loading, setLoading]=useState(false);
+  const [loading, setLoading]=useState(true);
   const [userInput, setUserInput]=useState("");
   const checkInput = (event) => {
     if (event.keyCode===13) {
       fetchWeather()
+      setLoading(true)
     } else {
       setUserInput(event.target.value)
     }
@@ -62,11 +62,10 @@ let Weathy=()=> {
   const fetchWeather=async ()=>{
     try {
       let response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${userInput}&appid=${apiKey}&units=metric`);
-        setLoading(true)
         let jsonResponse = await response.json()
         setApiResponse(jsonResponse)
         console.log(jsonResponse);
-        
+        setLoading(false)
       } catch (error) {
         console.log(error)
       }
@@ -81,8 +80,8 @@ let Weathy=()=> {
         <div className="max-w-screen-xl text-[whitesmoke] mx-auto  items-center md:px-0 px-[2%] h-full flex">
 <div className=' px-10 p-14 mx-auto max-w-[500px] shadow-lg rounded-[30px] bg-[#000000d0] h-[470px] w-[100%] '>
 <div aria-label='search container' className='flex justify-between bg-[#96969633] p-4 rounded-2xl'>
-<input type="text" placeholder='Enter a city name' autoFocus onKeyUp={()=>checkInput(event)} className='focus:outline-none text-[#eee] text-2xl py-4 w-[90%] bg-transparent rounded-xl'/>
-<button onClick={()=>setLoading(!loading)}>
+<input type="text" placeholder='Enter a city name' autoFocus onKeyUp={()=>checkInput(event)}  className='focus:outline-none text-[#eee] text-2xl py-4 w-[90%] bg-transparent rounded-xl'/>
+<button onClick={()=>fetchWeather()}>
     {
         loading?(
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="#ddd" className="w-6 h-6 animate-spin">
@@ -100,7 +99,7 @@ let Weathy=()=> {
 
 </button>
 </div>
-<WeatherInfo loading={loading} weatherData={apiResponse?apiResponse:apiResponse} />
+<WeatherInfo loading={loading} weatherData={apiResponse} />
 </div>
         </div>
         </div>

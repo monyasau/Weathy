@@ -33,17 +33,8 @@ const TopNav = () => {
                 strokeLinecap="round"
                 ></path>
             </svg>
-          <a href="/" className=" hover:underline ">
-            Home
-          </a>
-          <a href="./Projects.jsx" className="hover:underline ">
-            Projects
-          </a>
-          <a href="./About.jsx" className=" hover:underline ">
-            About
-          </a>
-          <a href="/Contact.jsx" className=" hover:underline ">
-            Contact
+          <a href="https://monyasau.netlify.app" className="text-[#000000d0] hover:underline ">
+            Contact Me
           </a>
           
                 </div>
@@ -78,17 +69,8 @@ const TopNav = () => {
 
             <div className="hidden sm:block">
               <div className=" sm:flex gap-14">
-              <a href="/" className=" hover:underline ">
-            Home
-          </a>
-          <a href="./Projects.jsx" className=" hover:underline ">
-            Projects
-          </a>
-          <a href="./About.jsx" className=" hover:underline ">
-            About
-          </a>
-          <a href="/Contact.jsx" className=" hover:underline ">
-            Contact
+              <a href="https://monyasau.netlify.app" className=" hover:underline ">
+            Contact Ne
           </a>
               </div>
             </div>

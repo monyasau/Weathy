@@ -23,9 +23,11 @@ const WeatherInfo = ({ loading, weatherData }) => {
 }
   return (
     <div>
-      {loading ? (
+      {loading? (
         <div aria-label="weather info">
-          <div aria-label="Weather info main" className="my-4 ">
+            {weatherData && weatherData.weather && weatherData.weather.length > 0 && 
+(
+<div aria-label="Weather info main" className="my-4 ">
             <h1 className="text-3xl gap-5 my-4 font-semibold capitalize flex  items-center">
               <div className=" rounded-full" aria-label="Weather info">
                 <img
@@ -69,6 +71,9 @@ const WeatherInfo = ({ loading, weatherData }) => {
               {weatherData.name + ", " + weatherData.sys.country}
             </div>
           </div>
+)
+            }
+          
           <div className="text-xl my-4 font-semibold">
             Time: {updateTime()}
           </div>

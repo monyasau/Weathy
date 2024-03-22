@@ -28,7 +28,7 @@ const WeatherInfo = ({ loading, weatherData }) => {
             {weatherData && weatherData.weather && weatherData.weather.length > 0 && 
 (
 <div aria-label="Weather info main" className="my-4 ">
-            <h1 className="text-3xl gap-5 my-4 font-semibold capitalize flex  items-center">
+            <h1 className=" gap-5  my-6  font-semibold capitalize flex  items-center">
               <div className=" rounded-full" aria-label="Weather info">
                 <img
                   src={`https://openweathermap.org/img/wn/${weatherData.weather[0].icon}.png`}
@@ -37,7 +37,7 @@ const WeatherInfo = ({ loading, weatherData }) => {
                 />
               </div>
 
-              <div className=" h-10 w-[70%] text-4xl mr-4">
+              <div className=" h-10 text-3xl inline-flex md:text-4xl mr-4">
                 {weatherData.weather[0].description}
               </div>
             </h1>

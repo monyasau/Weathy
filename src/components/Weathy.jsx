@@ -52,7 +52,9 @@ let Weathy=()=> {
   const [loading, setLoading]=useState(true);
   const [userInput, setUserInput]=useState("");
   const checkInput = (event) => {
-    if (event.keyCode===13) {
+    if ((event.keyCode === 13 || event.type === "click") && userInput !== "") {
+
+      
       fetchWeather()
       setLoading(true)
     } else {
@@ -67,7 +69,7 @@ let Weathy=()=> {
         console.log(jsonResponse);
         setLoading(false)
       } catch (error) {
-        console.log(error)
+        console.log("error:",error)
       }
         // fetch(`https://api.openweathermap.org/data/2.5/weather?q=${userInput}&appid=${apiKey}`).then(response=>response.json()).then(data=>console.log(data)).catch(error=>console.error('Error:', error))
 //         fetch(`https://api.openweathermap.org/data/2.5/weather?q=${userInput}&appid=${apiKey}&units=metric`).then(response=>response.json()).then(data=>setApiResponse(data)).catch(()=>setApiResponse())
@@ -80,8 +82,8 @@ let Weathy=()=> {
         <div className="max-w-screen-xl text-[whitesmoke] mx-auto  items-center md:px-0 px-[2%] h-full flex">
 <div className=' px-10 p-14 mx-auto max-w-[500px] shadow-lg rounded-[30px] bg-[#000000d0] h-[470px] w-[100%] '>
 <div aria-label='search container' className='flex justify-between bg-[#96969633] p-4 rounded-2xl'>
-<input type="text" placeholder='Enter a city name' autoFocus onKeyUp={()=>checkInput(event)}  className='focus:outline-none text-[#eee] text-2xl py-4 w-[90%] bg-transparent rounded-xl'/>
-<button onClick={()=>fetchWeather()}>
+<input type="text" placeholder='Enter a location' autoFocus onKeyUp={()=>checkInput(event)}  className='focus:outline-none text-[#eee] text-2xl py-4 w-[90%] bg-transparent rounded-xl'/>
+<button onClick={()=>checkInput(event)}>
     {
         loading?(
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="#ddd" className="w-6 h-6 animate-spin">

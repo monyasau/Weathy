@@ -3,50 +3,6 @@ import Backend from './Backend';
 import WeatherInfo from './WeatherInfo';
 
 let Weathy=()=> {
-  const responseTemplate={
-    "coord": {
-        "lon": 87.3167,
-        "lat": 23.4833
-    },
-    "weather": [
-        {
-            "id": 800,
-            "main": "Clear",
-            "description": "clear sky",
-            "icon": "01n"
-        }
-    ],
-    "base": "stations",
-    "main": {
-        "temp": 21.24,
-        "feels_like": 20.02,
-        "temp_min": 21.24,
-        "temp_max": 21.24,
-        "pressure": 1015,
-        "humidity": 23,
-        "sea_level": 1015,
-        "grnd_level": 1007
-    },
-    "visibility": 10000,
-    "wind": {
-        "speed": 0.49,
-        "deg": 330,
-        "gust": 0.69
-    },
-    "clouds": {
-        "all": 0
-    },
-    "dt": 1710102726,
-    "sys": {
-        "country": "IN",
-        "sunrise": 1710116612,
-        "sunset": 1710159488
-    },
-    "timezone": 19800,
-    "id": 1272175,
-    "name": "Durgapur",
-    "cod": 200
-}
   const apiKey = "b74985d4dc308902bd425a0afcda30ec";
   const [apiResponse, setApiResponse]=useState({});
   const [loading, setLoading]=useState(true);

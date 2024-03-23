@@ -27,6 +27,7 @@ let Weathy = ({updateParentLocation}) => {
       setApiResponse(jsonResponse);
       updateParentLocation(jsonResponse.name);
       console.log(jsonResponse);
+      setError(false)
       }
       else{
         setError(true)

@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import Backend from "./Backend";
 import WeatherInfo from "./WeatherInfo";
 
-let Weathy = () => {
+let Weathy = ({updateParentLocation}) => {
   const apiKey = "b74985d4dc308902bd425a0afcda30ec";
   const [apiResponse, setApiResponse] = useState({});
   const [loading, setLoading] = useState(true);
@@ -22,7 +22,8 @@ let Weathy = () => {
       );
       let jsonResponse = await response.json();
       setApiResponse(jsonResponse);
-      console.log(jsonResponse);
+      updateParentLocation(jsonResponse.name);
+      console.log(updateParentLocation);
       setLoading(false);
     } catch (error) {
       console.log("error:", error);

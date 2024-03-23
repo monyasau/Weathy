@@ -1,12 +1,11 @@
 import { useState, useEffect } from "react";
-import Backend from "./Backend";
 import WeatherInfo from "./WeatherInfo";
 
 let Weathy = ({ updateParentLocation }) => {
   const apiKey = "b74985d4dc308902bd425a0afcda30ec";
   const [apiResponse, setApiResponse] = useState({});
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(true);
   const [networkError, setNetworkError] = useState(false);
   const [userInput, setUserInput] = useState("london");
   const checkInput = (event) => {
@@ -44,7 +43,7 @@ let Weathy = ({ updateParentLocation }) => {
   };
 
   return (
-    <div className="w-full mt-8 h-[80%]">
+    <div className="w-full mt-8 h-[80%] flex-grow">
       <div className="max-w-screen-xl text-[whitesmoke] mx-auto  items-center md:px-0 px-[2%] h-full flex">
         <div className=" px-10 p-14 mx-auto max-w-[500px] shadow-lg rounded-[30px] bg-[#000000d0] h-[470px] w-[100%] ">
           <div

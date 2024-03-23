@@ -7,9 +7,9 @@ const TopNav = () => {
     <>
     <div className="w-full text-[#ffffff] bg-[#00000022] py-8 backdrop-blur-[40px] ">
       <div className="max-w-screen-xl flex px-4 md:px-0  py-6 items-center justify-between mx-auto w-full h-4">
-        <div className="text-2xl font-bold flex  ">
+        <div className="text-2xl font-bold flex items-center ">
           <a href="/Home" className="">
-            Weathy
+            Weather
           </a>
 <img src={weathyIcon} alt="" />
         </div>
@@ -33,8 +33,11 @@ const TopNav = () => {
                 strokeLinecap="round"
                 ></path>
             </svg>
-          <a href="https://monyasau.netlify.app" className="text-[#000000d0] hover:underline ">
+          <a href="https://monyasau.netlify.app" target="_blank"  className="text-[#000000d0] hover:underline ">
             Contact Me
+          </a>
+          <a href="https://monyasau.netlify.app" target="_blank"  className="text-[#000000d0] hover:underline ">
+           Other Apps
           </a>
           
                 </div>
@@ -69,8 +72,11 @@ const TopNav = () => {
 
             <div className="hidden sm:block">
               <div className=" sm:flex gap-14">
-              <a href="https://monyasau.netlify.app" className=" hover:underline ">
+              <a href="https://monyasau.netlify.app" target="_blank"  className="font-medium hover:underline ">
             Contact Me
+          </a>
+              <a href="https://monyasau.netlify.app/projects" target="_blank" className=" hover:underline ">
+            Other Apps
           </a>
               </div>
             </div>

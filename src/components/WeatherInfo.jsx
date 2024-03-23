@@ -41,7 +41,11 @@ const WeatherInfo = ({ loading, weatherData }) => {
                 {weatherData.weather[0].description}
               </div>
             </h1>
-            <div className=" rounded-xl text-3xl" aria-label="temp">
+            <div className=" rounded-xl text-3xl gap-3 font-medium items-center flex" aria-label="temp">
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"  viewBox="0 0 16 16">
+  <path d="M8 14a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3"/>
+  <path d="M8 0a2.5 2.5 0 0 0-2.5 2.5v7.55a3.5 3.5 0 1 0 5 0V2.5A2.5 2.5 0 0 0 8 0M6.5 2.5a1.5 1.5 0 1 1 3 0v7.987l.167.15a2.5 2.5 0 1 1-3.333 0l.166-.15z"/>
+</svg>
               {Math.round(weatherData.main.temp)} °C |{" "}
               {Math.round((weatherData.main.temp * 9) / 5 + 32)} °F
             </div>
@@ -53,7 +57,8 @@ const WeatherInfo = ({ loading, weatherData }) => {
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
-                strokeWidth={1.5}
+                width="36" height="36" 
+                strokeWidth={2}
                 stroke="currentColor"
                 className="w-6 h-6 mr-4"
               >

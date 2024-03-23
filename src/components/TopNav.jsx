@@ -70,7 +70,7 @@ const TopNav = () => {
             <div className="hidden sm:block">
               <div className=" sm:flex gap-14">
               <a href="https://monyasau.netlify.app" className=" hover:underline ">
-            Contact Ne
+            Contact Me
           </a>
               </div>
             </div>

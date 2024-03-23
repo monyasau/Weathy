@@ -32,7 +32,7 @@ const WeatherInfo = ({ loading, weatherData }) => {
               <div className=" rounded-full" aria-label="Weather info">
                 <img
                   src={`https://openweathermap.org/img/wn/${weatherData.weather[0].icon}.png`}
-                  className="w-full h-full"
+                  className="w-full bg-[#ffffffa8] rounded h-full"
                   alt=""
                 />
               </div>
